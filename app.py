@@ -2,10 +2,17 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-@app.route("/hello")
+
+@app.route("/")
 def health():
     return jsonify(
-        service="VCC Backend Microservice",
+        service="Welcome to Virtualization of VM World",
+        status="UP"
+    )
+@app.route("/hello")
+def hello():
+    return jsonify(
+        service="Welcome from VM1",
         status="UP"
     )
 
